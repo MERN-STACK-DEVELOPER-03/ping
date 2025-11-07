@@ -1,14 +1,24 @@
 {
   "version": 2,
   "builds": [
-    { "src": "backend/**/*.js", "use": "@vercel/node" },
-    { "src": "frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
+    {
+      "src": "backend/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
   ],
   "routes": [
-    // API routes go to backend functions
-    { "src": "/api/(.*)", "dest": "/backend/$1.js" },
-
-    // Frontend React SPA routes
-    { "src": "/(.*)", "dest": "/frontend/build/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/build/index.html"
+    }
   ]
 }
